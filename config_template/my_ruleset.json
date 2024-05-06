@@ -23,7 +23,7 @@
         "tag": "proxyDns",
         "address": "tls://8.8.8.8",
         "strategy": "ipv4_only",
-        "detour": "proxy"
+        "detour": "Proxy"
       },
       {
         "tag": "proxyServerNameServer",
@@ -144,7 +144,7 @@
   ],
   "outbounds": [
     {
-      "tag": "proxy",
+      "tag": "Proxy",
       "type": "selector",
       "outbounds": [
         "auto",
@@ -317,7 +317,7 @@
       "type": "selector",
       "outbounds": [
         "{all}",
-        "proxy"
+        "Proxy"
       ],
       "filter": [
         {
@@ -333,7 +333,7 @@
       "type": "selector",
       "outbounds": [
         "{all}",
-        "proxy"
+        "Proxy"
       ],
       "filter": [
         {
@@ -349,7 +349,7 @@
       "type": "selector",
       "outbounds": [
         "{all}",
-        "proxy"
+        "Proxy"
       ],
       "filter": [
         {
@@ -365,7 +365,7 @@
       "type": "selector",
       "outbounds": [
         "{all}",
-        "proxy"
+        "Proxy"
       ],
       "filter": [
         {
@@ -381,7 +381,7 @@
       "type": "selector",
       "outbounds": [
         "{all}",
-        "proxy"
+        "Proxy"
       ],
       "filter": [
         {
@@ -397,7 +397,7 @@
       "type": "selector",
       "outbounds": [
         "{all}",
-        "proxy"
+        "Proxy"
       ],
       "filter": [
         {
@@ -413,7 +413,7 @@
       "type": "selector",
       "outbounds": [
         "direct",
-        "proxy"
+        "Proxy"
       ]
     },
     {
@@ -449,16 +449,20 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "final": "proxy",
+    "final": "Proxy",
     "rules": [
       {
-        "protocol": "dns",
+        "type": "logical",
+        "mode": "or",
+        "rules":[
+          {
+            "port":53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
         "outbound": "dns-out"
-      },
-      {
-        "network": "udp",
-        "port": 443,
-        "outbound": "block"
       },
       {
         "rule_set": "geosite-category-ads-all",
@@ -470,7 +474,7 @@
       },
       {
         "clash_mode": "global",
-        "outbound": "proxy"
+        "outbound": "Proxy"
       },
       {
         "domain_suffix": [
