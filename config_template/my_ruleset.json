@@ -49,15 +49,15 @@
     "rules": [
       {
         "domain_suffix": [
-          ".boluomimohesa.tk"
+          ".msftncsi.com",
+          ".msftconnecttest.com"
         ],
         "domain": [
           "ghproxy.com",
           "cdn.jsdelivr.net",
           "testingcf.jsdelivr.net",
           "fastly.jsdelivr.net",
-          ".msftncsi.com",
-          ".msftconnecttest.com"
+          "alist.boluomimohesa.tk"
         ],
         "server": "localDns"
       },
@@ -478,18 +478,18 @@
       },
       {
         "domain_suffix": [
-          ".boluomimohesa.tk"
+          ".msftncsi.com",
+          ".msftconnecttest.com"
         ],
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
           "yacd.haishan.me",
+          "alist.boluomimohesa.tk",
           "d.metacubex.one",
           "cdn.jsdelivr.net",
           "testingcf.jsdelivr.net",
-          "fastly.jsdelivr.net",
-          ".msftncsi.com",
-          ".msftconnecttest.com"
+          "fastly.jsdelivr.net"
         ],
         "outbound": "direct"
       },
