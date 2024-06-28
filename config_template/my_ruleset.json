@@ -23,8 +23,7 @@
         "tag": "proxyDns",
         "address": "https://8.8.8.8/dns-query",
         "strategy": "ipv4_only",
-        "detour": "Proxy",
-        "client_subnet": "1.0.1.0"
+        "detour": "Proxy"
       },
       {
         "tag": "proxyServerNameServer",
@@ -107,6 +106,13 @@
           "geosite-cn"
         ],
         "server": "localDns"
+      },
+      {
+        "rule_set": [
+          "geoip-cn"
+        ],
+        "server": "proxyDns",
+        "client_subnet": "1.0.1.0"
       }
     ],
     "fakeip": {
