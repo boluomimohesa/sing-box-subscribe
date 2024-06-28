@@ -600,7 +600,7 @@
         "outbound": "🌏 cn"
       },
       {
-        "rule_set": "geoip-private",
+        "ip_is_private": true,
         "outbound": "🌏 cn"
       }
     ],
@@ -813,13 +813,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://fastly.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/GoogleFCM.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "geoip-private",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/srs/private.srs",
         "download_detour": "direct"
       }
     ]
