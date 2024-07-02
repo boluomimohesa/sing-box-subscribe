@@ -26,6 +26,12 @@
         "detour": "Proxy"
       },
       {
+        "tag": "cloudflareDohisIpv4",
+        "address": "https://1.1.1.1/dns-query",
+        "strategy": "ipv4_only",
+        "detour": "Proxy"
+      },
+      {
         "tag": "cloudflareDoh",
         "address": "https://1.1.1.1/dns-query",
         "detour": "Proxy"
@@ -764,13 +770,6 @@
         "download_detour": "direct"
       },
       {
-        "tag": "geosite-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/ChinaMax.srs",
-        "download_detour": "direct"
-      },
-      {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
         "format": "binary",
@@ -788,21 +787,28 @@
         "tag": "geosite-okx",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/OKX.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/OKX.srs",
         "download_detour": "direct"
       },
       {
         "tag": "geosite-binance",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/Binance.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/Binance.srs",
         "download_detour": "direct"
       },
       {
         "tag": "geosite-fcm",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/GoogleFCM.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/GoogleFCM.srs",
+        "download_detour": "direct"
+      },      
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm6/ChinaMax.srs",
         "download_detour": "direct"
       }
     ]
