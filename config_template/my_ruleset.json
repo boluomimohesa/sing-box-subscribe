@@ -20,9 +20,14 @@
   "dns": {
     "servers": [
       {
-        "tag": "proxyDns",
+        "tag": "googleDohisIpv4",
         "address": "https://8.8.8.8/dns-query",
         "strategy": "ipv4_only",
+        "detour": "Proxy"
+      },
+      {
+        "tag": "cloudflareDoh",
+        "address": "https://1.1.1.1/dns-query",
         "detour": "Proxy"
       },
       {
@@ -32,7 +37,7 @@
         "detour": "direct"
       },
       {
-        "tag": "localDns",
+        "tag": "aliDoh",
         "address": "https://223.5.5.5/dns-query",
         "detour": "direct"
       },
@@ -59,7 +64,7 @@
           "fastly.jsdelivr.net",
           "alist.boluomimohesa.tk"
         ],
-        "server": "localDns"
+        "server": "aliDoh"
       },
       {
         "outbound": "any",
@@ -68,7 +73,7 @@
       },
       {
         "clash_mode": "direct",
-        "server": "localDns"
+        "server": "aliDoh"
       },
       {
         "clash_mode": "global",
@@ -99,19 +104,19 @@
           "geosite-microsoft",
           "geosite-fcm"
         ],
-        "server": "proxyDns"
+        "server": "googleDohisIpv4"
       },
       {
         "rule_set": [
           "geosite-cn"
         ],
-        "server": "localDns"
+        "server": "aliDoh"
       },
       {
         "rule_set": [
           "geoip-cn"
         ],
-        "server": "proxyDns",
+        "server": "cloudflareDoh",
         "client_subnet": "1.0.1.0"
       }
     ],
