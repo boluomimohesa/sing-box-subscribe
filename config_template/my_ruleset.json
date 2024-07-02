@@ -794,7 +794,7 @@
         "tag": "geosite-binance",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/Binance.srs",
+        "url": "https://fastly.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/Binance.srs",
         "download_detour": "direct"
       },
       {
