@@ -59,6 +59,10 @@
     ],
     "rules": [
       {
+        "rule_set": "AWAvenue-Ads-Rule",
+        "server": "block"
+      },
+      {
         "domain_suffix": [
           ".msftncsi.com",
           ".msftconnecttest.com"
@@ -468,7 +472,7 @@
         "outbound": "dns-out"
       },
       {
-        "rule_set": "geosite-category-ads-all",
+        "rule_set": "AWAvenue-Ads-Rule",
         "outbound": "🛑 AdBlock"
       },
       {
