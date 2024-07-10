@@ -59,7 +59,10 @@
     ],
     "rules": [
       {
-        "rule_set": "AWAvenue-Ads-Rule",
+        "rule_set": [
+          "AWAvenue-Ads-Rule",
+          "Advertising"
+        ],
         "server": "block"
       },
       {
@@ -472,7 +475,10 @@
         "outbound": "dns-out"
       },
       {
-        "rule_set": "AWAvenue-Ads-Rule",
+        "rule_set": [
+          "AWAvenue-Ads-Rule",
+          "Advertising"
+        ],
         "outbound": "🛑 AdBlock"
       },
       {
@@ -781,13 +787,6 @@
         "download_detour": "direct"
       },
       {
-        "tag": "geosite-category-ads-all",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "direct"
-      },
-      {
         "tag": "geosite-okx",
         "type": "remote",
         "format": "binary",
@@ -820,6 +819,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://fastly.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "Advertising",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/Advertising.srs",
         "download_detour": "direct"
       }
     ]
