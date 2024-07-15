@@ -93,6 +93,10 @@
         "server": "googleDohisIpv4"
       },
       {
+        "rule_set": "geosite-openai",
+        "server": "cloudflareDoh"
+      },
+      {
         "query_type": [
           "A",
           "AAAA"
@@ -100,7 +104,6 @@
         "rule_set": [
           "geosite-telegram",
           "geosite-github",
-          "geosite-openai",
           "geosite-youtube",
           "geosite-google",
           "geosite-twitter",
