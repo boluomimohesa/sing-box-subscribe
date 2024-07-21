@@ -59,17 +59,11 @@
     ],
     "rules": [
       {
-        "rule_set": [
-          "AWAvenue-Ads-Rule",
-          "Advertising"
-        ],
+        "rule_set": ["AWAvenue-Ads-Rule", "Advertising"],
         "server": "block"
       },
       {
-        "domain_suffix": [
-          ".msftncsi.com",
-          ".msftconnecttest.com"
-        ],
+        "domain_suffix": [".msftncsi.com", ".msftconnecttest.com"],
         "domain": [
           "ghproxy.com",
           "cdn.jsdelivr.net",
@@ -97,10 +91,7 @@
         "server": "cloudflareDoh"
       },
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
+        "query_type": ["A", "AAAA"],
         "rule_set": [
           "geosite-telegram",
           "geosite-github",
@@ -115,22 +106,15 @@
         "rewrite_ttl": 1
       },
       {
-        "rule_set": [
-          "geosite-microsoft",
-          "geosite-fcm"
-        ],
+        "rule_set": ["geosite-microsoft", "geosite-fcm"],
         "server": "googleDohisIpv4"
       },
       {
-        "rule_set": [
-          "geosite-cn"
-        ],
+        "rule_set": ["geosite-cn"],
         "server": "aliDoh"
       },
       {
-        "rule_set": [
-          "geoip-cn"
-        ],
+        "rule_set": ["geoip-cn"],
         "server": "cloudflareDoh",
         "client_subnet": "1.0.1.0"
       }
@@ -159,11 +143,7 @@
     {
       "tag": "Proxy",
       "type": "selector",
-      "outbounds": [
-        "auto",
-        "direct",
-        "{all}"
-      ]
+      "outbounds": ["auto", "direct", "{all}"]
     },
     {
       "tag": "🤖 OpenAI",
@@ -281,11 +261,7 @@
     {
       "tag": "📺 Bilibili",
       "type": "selector",
-      "outbounds": [
-        "direct",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点"
-      ]
+      "outbounds": ["direct", "🇭🇰 香港节点", "🇹🇼 台湾节点"]
     },
     {
       "tag": "🎬 MediaVideo",
@@ -328,90 +304,62 @@
     {
       "tag": "🇭🇰 香港节点",
       "type": "selector",
-      "outbounds": [
-        "{all}",
-        "Proxy"
-      ],
+      "outbounds": ["{all}", "Proxy"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇭🇰|HK|hk|香港|港|HongKong"
-          ]
+          "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
         }
       ]
     },
     {
       "tag": "🇹🇼 台湾节点",
       "type": "selector",
-      "outbounds": [
-        "{all}",
-        "Proxy"
-      ],
+      "outbounds": ["{all}", "Proxy"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"
-          ]
+          "keywords": ["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]
         }
       ]
     },
     {
       "tag": "🇸🇬 狮城节点",
       "type": "selector",
-      "outbounds": [
-        "{all}",
-        "Proxy"
-      ],
+      "outbounds": ["{all}", "Proxy"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇸🇬|SG|sg|新加坡|狮|Singapore"
-          ]
+          "keywords": ["🇸🇬|SG|sg|新加坡|狮|Singapore"]
         }
       ]
     },
     {
       "tag": "🇯🇵 日本节点",
       "type": "selector",
-      "outbounds": [
-        "{all}",
-        "Proxy"
-      ],
+      "outbounds": ["{all}", "Proxy"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇯🇵|JP|jp|日本|Japan"
-          ]
+          "keywords": ["🇯🇵|JP|jp|日本|Japan"]
         }
       ]
     },
     {
       "tag": "🇺🇸 美国节点",
       "type": "selector",
-      "outbounds": [
-        "{all}",
-        "Proxy"
-      ],
+      "outbounds": ["{all}", "Proxy"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇺🇸|US|us|美国|美|United States"
-          ]
+          "keywords": ["🇺🇸|US|us|美国|美|United States"]
         }
       ]
     },
     {
       "tag": "✈️ 其他节点",
       "type": "selector",
-      "outbounds": [
-        "{all}",
-        "Proxy"
-      ],
+      "outbounds": ["{all}", "Proxy"],
       "filter": [
         {
           "action": "exclude",
@@ -424,25 +372,17 @@
     {
       "tag": "🌏 cn",
       "type": "selector",
-      "outbounds": [
-        "direct",
-        "Proxy"
-      ]
+      "outbounds": ["direct", "Proxy"]
     },
     {
       "tag": "🛑 AdBlock",
       "type": "selector",
-      "outbounds": [
-        "direct",
-        "block"
-      ]
+      "outbounds": ["direct", "block"]
     },
     {
       "tag": "auto",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "30m",
       "tolerance": 50
@@ -467,9 +407,9 @@
       {
         "type": "logical",
         "mode": "or",
-        "rules":[
+        "rules": [
           {
-            "port":53
+            "port": 53
           },
           {
             "protocol": "dns"
@@ -478,10 +418,11 @@
         "outbound": "dns-out"
       },
       {
-        "rule_set": [
-          "AWAvenue-Ads-Rule",
-          "Advertising"
-        ],
+        "protocol": "quic",
+        "outbound": "block"
+      },
+      {
+        "rule_set": ["AWAvenue-Ads-Rule", "Advertising"],
         "outbound": "🛑 AdBlock"
       },
       {
@@ -493,10 +434,7 @@
         "outbound": "Proxy"
       },
       {
-        "domain_suffix": [
-          ".msftncsi.com",
-          ".msftconnecttest.com"
-        ],
+        "domain_suffix": [".msftncsi.com", ".msftconnecttest.com"],
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -522,10 +460,7 @@
         "outbound": "📹 Youtube"
       },
       {
-        "rule_set": [
-          "geosite-google",
-          "geosite-github"
-        ],
+        "rule_set": ["geosite-google", "geosite-github"],
         "outbound": "📢 Google"
       },
       {
@@ -571,10 +506,7 @@
         "outbound": "🎬 MediaVideo"
       },
       {
-        "rule_set": [
-          "geosite-binance",
-          "geosite-okx"
-        ],
+        "rule_set": ["geosite-binance", "geosite-okx"],
         "outbound": "C2c"
       },
       {
@@ -590,10 +522,7 @@
         "outbound": "📲 Telegram"
       },
       {
-        "rule_set": [
-          "geoip-twitter",
-          "geoip-facebook"
-        ],
+        "rule_set": ["geoip-twitter", "geoip-facebook"],
         "outbound": "💬 Social"
       },
       {
@@ -809,7 +738,7 @@
         "format": "binary",
         "url": "https://fastly.jsdelivr.net/gh/boluomimohesa/sing-rules-dat@sing/bm7/GoogleFCM.srs",
         "download_detour": "direct"
-      },      
+      },
       {
         "tag": "geosite-cn",
         "type": "remote",
