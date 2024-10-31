@@ -14,7 +14,8 @@
     },
     "cache_file": {
       "enabled": true,
-      "store_fakeip": false
+      "store_fakeip": true,
+      "store_rdrc": true
     }
   },
   "dns": {
@@ -53,8 +54,7 @@
       },
       {
         "tag": "fakedns",
-        "address": "fakeip",
-        "strategy": "ipv4_only"
+        "address": "fakeip"
       }
     ],
     "rules": [
@@ -99,8 +99,7 @@
           "geosite-google",
           "geosite-twitter",
           "geosite-instagram",
-          "geosite-facebook",
-          "geosite-geolocation-!cn"
+          "geosite-facebook"
         ],
         "server": "fakedns",
         "rewrite_ttl": 1
@@ -114,14 +113,29 @@
         "server": "aliDoh"
       },
       {
-        "rule_set": ["geoip-cn"],
-        "server": "cloudflareDoh",
-        "client_subnet": "1.0.1.0"
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geosite-geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "google",
+        "client_subnet": "114.114.114.114/24"
+      },
+      {
+        "query_type": ["A", "AAAA"],
+        "server": "fakedns"
       }
     ],
     "fakeip": {
       "enabled": true,
-      "inet4_range": "198.18.0.0/15"
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
     },
     "strategy": "prefer_ipv4",
     "independent_cache": true
@@ -129,7 +143,7 @@
   "inbounds": [
     {
       "type": "tun",
-      "address": ["172.19.0.0/30", "fdfe:dcba:9876::0/126"],
+      "address": ["172.18.0.1/30", "fdfe:dcba:9876::1/126"],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
